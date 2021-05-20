@@ -1,0 +1,79 @@
+openapi: 3.0.1
+info:
+  title: Tui Githup Aws API
+  description: Project used to give user Github Repository information
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    name: Robin Saxena
+  license:
+    name: Apache 2.0
+    url: 'http://springdoc.org'
+servers:
+  - url: 'http://localhost:8080'
+    description: Generated server url
+paths:
+  '/git/api/v1/user/repos/{user_name}':
+    get:
+      tags:
+        - github-controller
+      operationId: getUserReposDetails
+      parameters:
+        - name: user_name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: >'#/components/schemas/com.tui.github.dto.GitRepositoryInformationDTO'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  $ref: '#/components/schemas/com.tui.github.exception.ErrorMessage'
+        '406':
+          description: Not Acceptable
+          content:
+            application/xml:
+              schema:
+                type: object
+                items:
+                  $ref: '#/components/schemas/com.tui.github.exception.ErrorMessage'
+components:
+  schemas:
+    com.tui.github.dto.GitBranchInformationDTO:
+      type: object
+      properties:
+        branch_name:
+          type: string
+        last_commit_sha:
+          type: string
+    com.tui.github.dto.GitRepositoryInformationDTO:
+      type: object
+      properties:
+        repository_name:
+          type: string
+        owner_name:
+          type: string
+        branch_information:
+          type: array
+          items:
+            $ref: '#/components/schemas/com.tui.github.dto.GitBranchInformationDTO'
+    com.tui.github.exception.ErrorMessage:
+      type: object
+      properties:
+        status:
+          type: integer
+          format: int32
+        message:
+          type: string
+
