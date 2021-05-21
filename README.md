@@ -24,6 +24,8 @@ On windows, we will use the below command
 gradlew.bat build
 ```
 
+Once build is successful, user can see the test case report in <b>./build/reports/tests/test</b> folder. Click on <b>index.html</b> to see the report. For reference, test case report image is available in <b>documents</b> folder.
+
 ## Step 3: To Start the application
 ```
 ./gradlew bootRun
