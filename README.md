@@ -150,7 +150,7 @@ If we are logging and running the command with other than root user. we will nee
 sudo ./gradlew docker dockerRun
 ```
 
--> Check Jenkins is up and running, we will get the below message on terminal. For reference image is available in <b>documents</b> folder as <b>JenkinsStart.png</b>
+-> Check Jenkins is up and running. For reference image is available in <b>documents</b> folder as <b>JenkinsStart.png</b>
 
 -> After that on browser open the Jenkins using <a href="http://localhost:8080/">http://localhost:8080/</a>. For reference image is available in <b>documents</b> folder as <b>localhost8080.png</b>
 
