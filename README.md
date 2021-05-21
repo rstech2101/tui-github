@@ -152,7 +152,7 @@ sudo ./gradlew docker dockerRun
 
 -> Check Jenkins is up and running, we will get the below message on terminal. For reference image is available in <b>documents</b> folder as <b>JenkinsStart.png</b>
 
--> After that on browser open the Jenkins using <a href="http:\\localhost:8080">http:\\localhost:8080</a>. For reference image is available in <b>documents</b> folder as <b>localhost8080.png</b>
+-> After that on browser open the Jenkins using <a href="http://localhost:8080/">http://localhost:8080/</a>. For reference image is available in <b>documents</b> folder as <b>localhost8080.png</b>
 
 -> Once we open the Jenkins, then user need to add the credentails for <b>aws</b> and <b>docker-hub</b>. For aws-credentials, we will use AccessKey and SecretKey. For docker-hub, we will use userName and password.
 
